@@ -38,7 +38,7 @@ router.post('/info', async (req: Request, res: Response) => {
       return res.json({
         platform: 'youtube',
         title: videoDetails.title,
-        description: videoDetails.shortDescription,
+        description: videoDetails.description || '',
         duration: videoDetails.lengthSeconds,
         thumbnail: videoDetails.thumbnails[0]?.url,
         author: videoDetails.author.name,
