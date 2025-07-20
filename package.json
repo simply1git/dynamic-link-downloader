@@ -1,0 +1,23 @@
+{
+  "name": "link-downloader",
+  "version": "1.0.0",
+  "description": "State-of-the-art minimalist dynamic link downloader",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "build": "npm run client:build && npm run server:build",
+    "start": "concurrently \"npm run server:start\" \"npm run client:start\"",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "client:start": "cd client && npm start",
+    "server:dev": "cd server && npm run dev",
+    "server:build": "cd server && npm run build",
+    "server:start": "cd server && npm start"
+  },
+  "keywords": ["downloader", "link", "youtube", "media"],
+  "author": "AI Assistant",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
