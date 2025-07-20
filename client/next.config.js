@@ -13,8 +13,8 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_API_URL: process.env.NODE_ENV === 'production' 
-      ? 'https://your-worker-name.your-subdomain.workers.dev'
-      : 'http://localhost:5000'
+      ? 'https://dynamic-link-downloader-api.etlabcode.workers.dev' 
+      : 'http://localhost:3001'
   }
 }
 
