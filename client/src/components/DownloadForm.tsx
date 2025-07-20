@@ -54,8 +54,8 @@ export function DownloadForm() {
 
       const data = await response.json();
       setMediaInfo(data);
-    } catch (err: any) {
-      setError(err.message || 'Failed to get media information');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to get media information');
     } finally {
       setIsLoading(false);
     }
@@ -93,8 +93,8 @@ export function DownloadForm() {
 
       setDownloadStatus('success');
       setTimeout(() => setDownloadStatus('idle'), 3000);
-    } catch (err: any) {
-      setError(err.message || 'Download failed');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Download failed');
       setDownloadStatus('error');
       setTimeout(() => setDownloadStatus('idle'), 3000);
     }
